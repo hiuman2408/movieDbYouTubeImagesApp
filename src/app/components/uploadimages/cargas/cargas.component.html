@@ -1,0 +1,73 @@
+
+
+<div class="row  mt-2" >
+
+    <div class="col-12 ">
+        <a [routerLink]="['/imagenes/fotos']" class="float-right"  >  <button type="button" class="btn btn-outline-info"> <i class="fas fa-arrow-alt-left"></i>Regresar</button> </a> 
+    </div>
+   
+</div>
+
+<div class="row">
+   <div class="col-md-4">
+    <h3>Seleccione archivos</h3>
+
+        <div  class="well drop-zone">
+            <h4>Deje caer aquí los archivos</h4>
+            <img src="assets/img/drop-images.png">
+        </div>
+    <hr>
+            
+    <i class="fas fa-cloud-upload text-info fa-3x"></i> <small> <input type="file" accept="image/* " (change)="updateSource($event)" ></small>
+
+    <div class="row mt-2">
+        <img class="imagen img-thumbnail ml-4"  *ngIf="source" [src]="source">
+
+    </div>
+    
+
+        
+
+        
+        
+
+
+   </div>
+
+   <div class="col-md-8">
+    <h4>Cargar archivos</h4>
+
+    <button class="btn btn-success">Cargar a Firebase</button>
+    <button  class="btn btn-danger ml-2">Limpiar</button>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nombre del Arvicho</th>
+                <th>Tamaño</th>
+                <th>Progreso</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                      <div class="progress">
+                          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%;"
+                              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
+                      </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+    </table>
+
+   </div>
+
+</div>
+

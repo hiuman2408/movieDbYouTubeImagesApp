@@ -1,0 +1,50 @@
+<br>
+<div class="row" *ngIf="Movies">
+  <div class="col-12">
+
+    <h2>{{titulo}}</h2>
+    <hr>
+  </div>
+  <div class="col-12">
+    <div class="row animated fadeIn faster">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-md-12 div-pic-1 puntero" [ngStyle]="{ 'background-image': 'url('+((Movies[0].backdrop_path?Movies[0].backdrop_path:Movies[0].poster_path) | image)+')' }"
+            (click)="peliculaDetalle(Movies[0].id)">
+            <p class="pic-titulo">{{Movies[0].original_title}} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 div-pic-2 puntero" [ngStyle]="{ 'background-image': 'url('+((Movies[1].backdrop_path?Movies[1].backdrop_path:Movies[1].poster_path) | image)+')'} "
+            (click)="peliculaDetalle(Movies[1].id)">
+            <p class="pic-titulo">{{Movies[1].original_title}} </p>
+          </div>
+          <div class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url('+((Movies[2].backdrop_path?Movies[2].backdrop_path:Movies[2].poster_path) | image)+')'}"
+            (click)="peliculaDetalle(Movies[2].id)">
+            <p class="pic-titulo">{{Movies[2].original_title}} </p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url('+((Movies[3].backdrop_path?Movies[3].backdrop_path:Movies[3].poster_path) | image)+')'}"
+            (click)="peliculaDetalle(Movies[3].id)">
+            <p class="pic-titulo">{{Movies[3].original_title}} </p>
+          </div>
+          <div class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url('+((Movies[4].backdrop_path?Movies[4].backdrop_path:Movies[4].poster_path)| image)+')'}"
+            (click)="peliculaDetalle(Movies[4].id)">
+            <p class="pic-titulo">{{Movies[4].original_title}} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url('+((Movies[5].backdrop_path?Movies[5].backdrop_path:Movies[5].poster_path) | image)+')'}"
+            (click)="peliculaDetalle(Movies[5].id)">
+            <p class="pic-titulo">{{Movies[5].original_title}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

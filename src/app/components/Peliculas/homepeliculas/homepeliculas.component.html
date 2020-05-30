@@ -1,0 +1,22 @@
+
+<div class="breadcrumb ">
+    
+    <h1>Películas App</h1>
+
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <app-shared [Movies]="peliculasEstrenos | slice:0:6" titulo="Películas en Cartelera"></app-shared>
+
+      <app-shared [Movies]="PeliculasPopulares | slice:0:6" titulo="Películas Populares"></app-shared>
+
+      <app-shared [Movies]="peliculasPolularesNinos | slice:0:6" titulo="Películas Populares para Niños"></app-shared>
+
+    </div>
+  </div>
+</div>

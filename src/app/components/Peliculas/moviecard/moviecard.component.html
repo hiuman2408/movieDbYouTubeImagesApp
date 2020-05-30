@@ -1,0 +1,106 @@
+<div class="container mt-5">
+
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h3>{{movie.title}}</h3>
+      </div>
+      <div class="col-md-4 ">
+        <button class="btn btn-outline-success float-right " (click)="regresar()" > <i class="fas fa-arrow-alt-left"></i> Regresar</button>
+      </div>
+    </div>
+    <div class="row animated fadeIn faster">
+      
+      <div class="col-md-6">
+
+        <img class="img-fluid img-thumbnail" [src]="movie.poster_path | image" alt="">
+      </div>
+      <div class="col-md-6">
+        <h2 >Sinopsis</h2>
+        <hr>
+        <blockquote>{{movie.overview | slice:0:250}}...</blockquote>
+        
+        <hr>
+        <div class="row ">
+          <div class="col-sm-5">
+            <span class="badge  badge-success mr-2">Frase celebre:  </span>
+          </div>
+          <div class="col-sm-7">
+            {{movie.tagline}} 
+          </div>
+        </div>
+        <div class="row mt-1">
+          <div class="col-sm-5">
+            <span class="badge  badge-success mr-2">Fecha de lanzamiento:   </span>
+          </div>
+          <div class="col-sm-7">
+            {{movie.release_date}}
+          </div>
+        </div>
+
+        <div class="row mt-1">
+          <div class="col-sm-5">
+            <span class="badge  badge-success mr-2">Popularidad:   </span>
+          </div>
+          <div class="col-sm-7">
+            {{movie.popularity}}
+          </div>
+        </div>
+        <div class="row mt-1">
+          <div class="col-sm-5">
+            <span class="badge  badge-success mr-2">Estado:   </span>
+          </div>
+          <div class="col-sm-7">
+            {{movie.status}}
+          </div>
+        </div>
+
+        <div class="row mt-1">
+          <div class="col-sm-5">
+            <span class="badge  badge-success mr-2">Voto Promedio:   </span>
+          </div>
+          <div class="col-sm-7">
+            {{movie.vote_average}}
+          </div>
+        </div>
+        <hr>
+        <!---  
+        <div class="row " *ngIf="videosMovie.length>0">
+          <span>{{videosMovie[0].name}}</span>
+        </div>
+
+        <div class="row "  *ngIf="videosMovie.length>0">
+        
+          <iframe height="250px" width="500px" [src]="videosMovie[0].key | domseguro " frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+           -->
+
+        <hr>
+       
+      </div>
+    </div>
+
+    <div class="row mt-5">
+
+      <div class="col-12">
+        <h2><P>Actores</P></h2>
+        <div class="card-columns">
+          <div class="card  " *ngFor="let actor of actoresMovie">
+            <img [src]="actor.profile_path | image" class="card-img-top"  alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{actor.name}}</h5>
+              <small>{{actor.character}}</small>
+               
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    
+  </div>
+  
+
+  
