@@ -16,28 +16,14 @@
             <h4>Deje caer aquí los archivos</h4>
             <img src="assets/img/drop-images.png">
         </div>
-    <hr>
+
             
-    <i class="fas fa-cloud-upload text-info fa-3x"></i> <small> <input type="file" accept="image/* " (change)="updateSource($event)" ></small>
-
-    <div class="row mt-2">
-        <img class="imagen img-thumbnail ml-4"  *ngIf="source" [src]="source">
-
-    </div>
-    
-
-        
-
-        
-        
-
-
    </div>
 
    <div class="col-md-8">
     <h4>Cargar archivos</h4>
 
-    <button class="btn btn-success">Cargar a Firebase</button>
+    <button (click)="cargaImagenes()" class="btn btn-success">Cargar a Firebase</button>
     <button  class="btn btn-danger ml-2">Limpiar</button>
 
     <table class="table">
@@ -51,15 +37,15 @@
             <tbody>
                 <tr>
                     <td >
-
+                     xyz
                     </td>
                     <td>
-
+                        12 kb
                     </td>
                     <td>
                       <div class="progress">
-                          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%;"
-                              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
+                          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%;"
+                              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                       </div>
                     </td>
                 </tr>
@@ -68,6 +54,66 @@
     </table>
 
    </div>
+
+</div>
+
+<hr class="mt-5 mb-5">
+<div class="row mt-5">
+
+    <div class="col-md-4">
+       
+        <i class="fas fa-cloud-upload text-info fa-3x"></i> <small> <input type="file" accept="image/* " (change)="updateSource($event)" ></small>
+
+        <div class="row mt-2">
+            <img class="imagen img-thumbnail ml-4"  *ngIf="source" [src]="source">
+    
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h4>Cargar archivos</h4>
+    
+        <button (click)="cargaImagen()" class="btn btn-success">Cargar a Firebase</button>
+        <button  (click)="limpiar()" class="btn btn-danger ml-2">Limpiar</button>
+    
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre del Arvicho</th>
+                    <th>Tamaño Kb</th>
+                    <th>Progreso</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >
+                         {{nombreImagen}}
+                        </td>
+                        <td>
+                            {{tamanoImagen}}  
+                        </td>
+                        <td>
+
+
+                            <div class="progress">
+                                <div  class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{ 'width': (uploadPercent | async) + '%' }">{{uploadPercent | async}}</div>
+                            </div>
+
+                        <!--   
+
+
+                         <div class="progress">
+                              <div  *ngIf="!completed" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%;"
+                                  aria-valuenow="uploadPercent | async" aria-valuemin="0" aria-valuemax="100">{{uploadPercent | async}}</div>
+                          </div>--> 
+                        </td>
+                    </tr>
+                    
+                </tbody>
+        </table>
+    
+       </div>
+
+     
 
 </div>
 

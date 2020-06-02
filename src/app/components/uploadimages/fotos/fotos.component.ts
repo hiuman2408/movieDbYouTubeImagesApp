@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Imagen } from '../../../interface/imagen';
+import { CargaImagenesService } from '../../../service/cargaimagenes.service';
 
 @Component({
   selector: 'app-fotos',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FotosComponent implements OnInit {
 
-  constructor() { }
+  imagenes: Imagen[];
+
+  constructor( private _scImagenes:CargaImagenesService) { 
+
+    this._scImagenes.getAllImagenes().subscribe(imagenes=>{
+      this.imagenes = imagenes;
+      
+    })
+
+    
+
+
+  }
 
   ngOnInit() {
   }
